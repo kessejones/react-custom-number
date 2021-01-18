@@ -1,9 +1,16 @@
 {
     "name": "react-custom-number",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "license": "MIT",
+    "author": {
+        "name": "Kesse Jones"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kessejones/react-custom-number.git"
+    },
     "scripts": {
         "dev": "rollup -cw",
         "build": "rollup -c"

@@ -29,7 +29,6 @@ export function add_format(params: IAddFormat) {
 
 export function remove_format(params: IRemoveFormat) {
     const { value, places } = params;
-    console.log('remove_format', value)
     const str_val = String(value).replace(/(\D)/g, '');
 
     const whole = str_val.substr(0, str_val.length - places);
