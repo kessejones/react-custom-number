@@ -1,6 +1,6 @@
 {
     "name": "react-custom-number",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "license": "MIT",
