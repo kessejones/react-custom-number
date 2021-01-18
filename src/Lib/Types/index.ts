@@ -21,7 +21,7 @@ export interface IFormatInteger {
     thousandsGroup: number;
 }
 
-export interface InputMoneyProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface CustomNumberProps extends InputHTMLAttributes<HTMLInputElement> {
     value?: string;
     prefix?: string;
     suffix?: string;
@@ -29,4 +29,5 @@ export interface InputMoneyProps extends InputHTMLAttributes<HTMLInputElement> {
     decimalSeparator?: string;
     thousandsSeparator?: string;
     thousandsGroup?: number;
+    onTextChange?: Function;
 }

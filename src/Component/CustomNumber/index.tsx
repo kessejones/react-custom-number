@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { add_format, remove_format } from '../../Lib/Format';
-import { InputMoneyProps } from '../../Lib/Types';
+import { CustomNumberProps } from '../../Lib/Types';
 
-export default function CustomNumber(props: InputMoneyProps) {
+export default function CustomNumber(props: CustomNumberProps) {
     const inputRef = useRef<HTMLInputElement>(null);
     const [ internalValue, setInternalValue ] = useState('');
 
@@ -15,6 +15,7 @@ export default function CustomNumber(props: InputMoneyProps) {
         thousandsSeparator=',', 
         thousandsGroup=3,
         onChange,
+        onTextChange,
         onFocus,
         ...rest 
     } = props;
@@ -34,10 +35,10 @@ export default function CustomNumber(props: InputMoneyProps) {
     }
     
     function onChangeInternal(e) {
-        const value_with_format = e.target.value;
-        const value_without_format = remove_format({ value: value_with_format || '0', places }).toString();
+        const value_without_format = remove_format({ value: e.target.value || '0', places }).toString();
 
-        onChange && onChange({ ...e, target: { value: value_without_format }});
+        onChange && onChange(e);
+        onTextChange && onTextChange(value_without_format);
     }
 
     function applyFormat() {
