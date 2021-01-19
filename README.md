@@ -17,8 +17,8 @@ import CustomNumber from 'react-custom-number';
 export default function App(){
     const [ value, setValue ] = useState('0');
 
-    function onChange(e) {
-        setValue(e.target.value);
+    function onTextChange(v) {
+        setValue(v);
     }
 
     return (
@@ -27,7 +27,7 @@ export default function App(){
                 prefix="R$ " 
                 thousandsSeparator="." 
                 decimalSeparator="," 
-                onChange={onChange}
+                onTextChange={onTextChange}
             />
         </div>
     );
@@ -42,8 +42,8 @@ import CustomNumber from 'react-custom-number';
 export default function App(){
     const [ value, setValue ] = useState('0');
 
-    function onChange(e) {
-        setValue(e.target.value);
+    function onTextChange(v) {
+        setValue(v);
     }
 
     return (
@@ -52,7 +52,7 @@ export default function App(){
                 suffix=" %"
                 thousandsSeparator="." 
                 decimalSeparator="," 
-                onChange={onChange}
+                onTextChange={onTextChange}
             />
         </div>
     );
@@ -72,3 +72,4 @@ places              | Number    | 2
 decimalSeparator    | String    | "."
 thousandsSeparator  | String    | ","
 thousandsGroup      | Number    | 3
+onTextChange        | Function  | null
